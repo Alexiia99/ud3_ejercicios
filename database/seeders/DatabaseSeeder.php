@@ -13,7 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // $this->call(AlumnosTableSeeder::class);
         // User::factory(10)->create();
+        $this->call([
+            AlumnoSeeder::class,
+            AsignaturaSeeder::class,
+            NotaSeeder::class,
+        ]);
 
         User::factory()->create([
             'name' => 'Test User',
